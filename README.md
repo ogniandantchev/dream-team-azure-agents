@@ -1,131 +1,226 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/yaniv-vaknin-7a8324178/)
 
-# Build your dream team with Autogen
+# Dream Team Azure Agents - Simplified
 
-This repository is a part of the Azure Samples collection and utilizes Microsoft Autogen 0.4 alongside Azure OpenAI. It seamlessly integrates with a React UI to create a comprehensive end-to-end multi-agent application. Designed for simplicity, this repository streamlines the process of building, testing, and deploying an advanced multi-agent framework. [Magentic One](https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/)
- 
+A simplified multi-agent AI system powered by **Microsoft Agent Framework**, **Streamlit**, and **Python Pulumi** - designed for easy partner demonstrations.
 
 ![Architecture](assets/architecture.png)
 
+🎉 **March 2025**: Complete migration to simplified Python stack  
+🎉 **February 2025**: Microsoft Agent Framework integration  
+🎉 **January 2025**: Streamlit UI and Pulumi infrastructure
+## 🚀 Key Simplifications
 
-:tada: February 25, 2025: We have a new React based UI with new business use cases
+This version has been **completely reworked** to be much simpler and easier to present to partners:
 
-:tada: January 11, 2025: The repo now support [Autogen 0.4.0 stable version](https://microsoft.github.io/autogen/stable/)
+### **Single Language Stack (Python Only)**
+- ✅ **Backend**: Python with Microsoft Agent Framework (replaced Autogen)
+- ✅ **Frontend**: Python Streamlit (replaced React/TypeScript)
+- ✅ **Infrastructure**: Python Pulumi (replaced Bicep)
 
-:tada: December 3, 2024: The repo now support one click deployment with [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/), if you would like to run it with the full process localy you can check [v0.21](https://github.com/yanivvak/dream-team/tree/v0.21)
+### **Modern AI Framework**
+- ✅ **Microsoft Agent Framework**: Latest multi-agent orchestration
+- ✅ **MagenticBuilder**: Advanced workflow orchestration  
+- ✅ **Hosted Tools**: Code interpreter, web search, file operations
+- ✅ **Real-time Streaming**: Better event handling and user experience
 
-:tada: November 18, 2024: we are porting this repo to  [Autogen 0.4](https://microsoft.github.io/autogen/0.4.0.dev6/index.html), A new event driven, asynchronous architecture for AutoGen and [Magentic One](https://github.com/microsoft/autogen/tree/main/python/packages/autogen-magentic-one)
+### **Partner Demo Ready**
+- ✅ **Simple Setup**: Minimal configuration required
+- ✅ **Clean UI**: Professional Streamlit interface
+- ✅ **Live Demos**: Real-time agent conversations
+- ✅ **Quick Deploy**: Azure Developer CLI compatible
 
+## 🏗️ Architecture
 
-https://github.com/user-attachments/assets/e3f1bbae-a93b-47d8-b661-b6a9507c243b
-
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Streamlit     │    │ Agent Framework │    │ Azure Services  │
+│   Frontend      │───▶│    Backend      │───▶│ (OpenAI, Cosmos)│
+│   (Python)      │    │   (Python)      │    │    (Pulumi)     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
 
 # Key Features
 
-Dream Team offers the following key features:
+Dream Team **Simplified** offers the following key features:
 
-- **Advanced multi agent framework**: this solution is based on the popular framework Autogen(35K stars) and Magentic One
-- **Friendly UI**: easy way to build and share data apps powered by React / Vite.js / Tailwind / Shadcn
-- **Single line deployment**: developer-friendly deployment that accelerates your path from a local development environment to Azure with single line of code - azd up.
-- **Secure code execution**:  Fast access to secure sandboxed with strong isolation environments that are ideal for running code or applications with Azure Container Apps dynamic sessions.
-- **Managed Identities**: Built in Azure Managed identities to eliminate the need for developers to manage these credentials
-- **Observability & Debugging**: Built-in features and tools for tracking, tracing, and debugging agent interactions and workflows, including PromptFlow tracing.
+- **Microsoft Agent Framework**: Latest event-driven, asynchronous multi-agent system
+- **Streamlit UI**: Clean, intuitive Python web interface - perfect for demos
+- **Python Pulumi**: Infrastructure as Code with full programmatic control
+- **Single line deployment**: `azd up` - from local development to Azure instantly
+- **Secure code execution**: Azure Container Apps dynamic sessions for safe code execution
+- **Managed Identities**: Built-in Azure authentication - no credential management needed
+- **Real-time streaming**: Live agent conversations with immediate feedback
 
+# Prerequisites
 
-# Prerequisites:
+1. Install [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
+2. Azure subscription access
+3. Python 3.10+ (< 3.13)
+4. [Pulumi CLI](https://www.pulumi.com/docs/get-started/install/) for infrastructure
 
-1. Install [Azure Developer CLI](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd?tabs=winget-windows%2Cbrew-mac%2Cscript-linux&pivots=os-windows).
-2. Ensure you have access to an Azure subscription
-3. Docker - Follow the [official Docker installation instructions](https://docs.docker.com/get-started/get-docker/) - make sure your docker is loged in (docker login -u "username" -p "password"
- )
-4. Python version >= 3.10, < 3.13
-5. Install [UV](https://github.com/astral-sh/uv?tab=readme-ov-file#installation) - optional for running locally
+# Quick Start
 
-
-# Step by step deployment
-   
-## 1. Clone the repository     
-```bash  
-git clone https://github.com/Azure-Samples/dream-team  
+## 1. Clone the repository
+```bash
+git clone https://github.com/Azure-Samples/dream-team-azure-agents
+cd dream-team-azure-agents
 ```
+
 ## 2. Login to your Azure account
 ```bash
 azd auth login
 ```
-> You need to choose your preferred region (you can start with east us or sweden central or any other available region)
 
-## 3. Deploy Azure Resources and the app
-
+## 3. Deploy with Azure Developer CLI
 ```bash
 azd up
 ```
 
-## 4. [Optional] Ingest the demo documents into your AI Search
+## 4. [Optional] Run locally for development
 
-In case you want to use the demo data, you can run the ingestion script to populate your AI Search with the demo data. This step is optional and is only needed if you want to use the demo data.
-
+### Backend (Agent Framework)
 ```bash
-cd backend
-python -m aisearch.py
+cd backend_new
+pip install -r requirements.txt
+# Configure .env with Azure endpoints (created by azd up)
+python main.py
 ```
 
-> Notes:
-> 1. This step assumes you have already setup your infrastructure and your local `.env` file has been populated with the necessary values.
-> 2. Make sure your identity has appropriate acccess to AI Search (role `Search Index Data Contributor`) and to created storage (role `Storage Blob Data Contributor`), otherwise you will get an error when running the ingestion script.
-> 3. This creates four indexes: ag-demo-fsi-upsell, ag-demo-pred-maint, ag-demo-retail, ag-demo-safety
+### Frontend (Streamlit)
+```bash
+cd frontend_streamlit  
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
-# Notes 
-- While using Web Surfer agent, you might want to change Content Safety on Azure OpenAI to accomodate your needs
-- currently it is "bring your own AI Search" (BYOS) - since its assuming you have your own search engine, we are working on a solution to make it easier for you
-   - you must add two ENV variables to backend service to connect to your search engine
-   - `AZURE_SEARCH_SERVICE_ENDPOINT` - your search engine endpoint
-   - `AZURE_SEARCH_ADMIN_KEY` - your search engine key (we are working to enable managed identity for this service)
+### Infrastructure (Pulumi)
+```bash
+cd infra_pulumi
+pip install -r requirements.txt
+pulumi stack init dev
+pulumi config set principalId <your-principal-id>
+pulumi up
+```
+
+## 5. [Optional] Ingest demo documents
+```bash
+cd backend_new
+python aisearch.py
+```
+
+# 🤖 Available Agents
+
+- **CoderAgent** 👨‍💻: Writes and executes Python code with secure sandboxing
+- **WebSurferAgent** 🏄‍♂️: Performs web research and information gathering  
+- **FileSurferAgent** 📂: Explores files and data structures intelligently
+- **Custom Agents**: Easy to add domain-specific agents for any use case
+
+# 🎯 Perfect for Partner Demos
+
+### Why This Version is Demo-Friendly
+
+1. **Single Language**: Everything is Python - easier to understand and modify
+2. **Simple UI**: Streamlit provides clean, professional interface  
+3. **Quick Setup**: Minimal configuration required
+4. **Real-time**: Live agent conversations show AI capabilities
+5. **Extensible**: Easy to add new agents for specific use cases
+6. **Modern**: Uses latest Microsoft Agent Framework
+
+### Demo Scenarios
+
+- **Code Generation**: Show agents writing and executing code live
+- **Research Tasks**: Demonstrate intelligent web search and analysis
+- **Data Analysis**: File exploration and data processing capabilities
+- **Multi-agent Collaboration**: Agents working together on complex tasks
+
+# 📁 Project Structure
+
+```
+dream-team-azure-agents/
+├── frontend_streamlit/          # 🎨 Streamlit frontend
+│   ├── streamlit_app.py        # Main Streamlit app
+│   ├── pyproject.toml          # Python dependencies
+│   └── README.md               # Frontend documentation
+├── backend_new/                 # 🤖 Agent Framework backend  
+│   ├── main.py                 # FastAPI server
+│   ├── agent_framework_helper.py # Agent orchestration
+│   ├── pyproject.toml          # Python dependencies
+│   └── README.md               # Backend documentation
+├── infra_pulumi/               # ☁️ Pulumi infrastructure
+│   ├── __main__.py             # Infrastructure code
+│   ├── Pulumi.yaml             # Pulumi configuration
+│   ├── pyproject.toml          # Python dependencies
+│   └── README.md               # Infrastructure documentation
+├── azure.yaml                  # Azure Developer CLI config
+└── README.md                   # This file
+```
+
+# 🔄 Migration from Original
+
+### What Changed
+
+| Component | Before | After | Benefit |
+|-----------|--------|-------|---------|
+| Backend Framework | Autogen | Microsoft Agent Framework | Modern, supported, event-driven |
+| Frontend | React/TypeScript | Streamlit/Python | Single language, simpler demos |
+| Infrastructure | Bicep | Python Pulumi | Programmatic, testable, flexible |
+| Complexity | High | **Low** | Easy to demo and customize |
+| Languages | 3 (Python/JS/Bicep) | **1 (Python)** | Unified development experience |
+
+### Backward Compatibility
+
+The API endpoints remain compatible, so the migration preserves functionality while dramatically simplifying the architecture.
  
 
-# Working locally  
+# Working Locally (Development Mode)
 
-There are two parts to this project: the backend and the frontend. The backend is written in Python, and the frontend is written in JavaScript using React.
+This simplified version uses Python for all components:
 
-## Backend
-
-```bash  
-cd backend  
-```
-Set up a virtual environment (Preferred)
+## Backend Development (Agent Framework)
 ```bash
-uv venv
-```
-Once you’ve created a virtual environment, you may activate it.
-
-On Windows, run:
-```bash
-.venv\Scripts\activate
-```
-On Unix or MacOS, run:
-```bash
-source .venv/bin/activate
-```
-To deactivate :
-```bash
-deactivate
-```
-> More information about virtual environments can be found [here](https://docs.python.org/3/tutorial/venv.html)
-
-### Install dependencies
-```bash
-uv sync
-playwright install --with-deps chromium
+cd backend_new
+pip install -r requirements.txt
+# Set up .env file with Azure service endpoints
+uvicorn main:app --reload --port 8000
 ```
 
-> Important: Magentic-One code uses code execution, you need to have Docker installed to run the examples if you use local execution
-
-### Run
+## Frontend Development (Streamlit)
 ```bash
-uvicorn main:app --reload
+cd frontend_streamlit
+pip install -r requirements.txt
+streamlit run streamlit_app.py --server.port 8501
 ```
 
-## Frontend (open a new terminal)
+## Infrastructure Development (Pulumi)
+```bash
+cd infra_pulumi
+pip install -r requirements.txt
+pulumi stack select dev
+pulumi preview  # See what will be deployed
+pulumi up       # Deploy infrastructure
+```
+
+# 🤝 Contributing
+
+This simplified version is designed for easy customization:
+
+1. **Add New Agents**: Extend the agent configuration in `agent_framework_helper.py`
+2. **Customize UI**: Modify the Streamlit app for specific demo needs
+3. **Extend Infrastructure**: Add new Azure resources in the Pulumi code
+4. **Enhanced Features**: Build on the simplified foundation
+
+# Learn More
+
+- [Microsoft Agent Framework Documentation](https://microsoft.github.io/agent-framework/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Pulumi Azure Documentation](https://www.pulumi.com/docs/clouds/azure/)
+- [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/)
+
+---
+
+**Perfect for partner demonstrations** - Simple, powerful, and built with modern Microsoft AI technologies. 🚀## Frontend (open a new terminal)
 ```bash
 cd frontend
 ```

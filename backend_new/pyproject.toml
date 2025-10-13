@@ -1,0 +1,39 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Backend for dream team project using Microsoft Agent Framework"
+readme = "README.md"
+requires-python = ">=3.10, <3.13"
+dependencies = [
+    # Azure services
+    "azure-identity==1.19.0",
+    "azure-search-documents==11.6.0b10",
+    "azure-storage-blob==12.25.0",
+    "azure-cosmos==4.9.0",
+    "azure-communication-email==1.0.0",
+    
+    # Microsoft Agent Framework (replacing Autogen)
+    "agent-framework[azure]>=0.1.0",
+    
+    # FastAPI and web framework
+    "fastapi==0.115.12",
+    "fastapi-cors==0.0.6",
+    "uvicorn==0.34.0",
+    "python-multipart==0.0.20",
+    
+    # Utilities
+    "python-dotenv==1.0.1",
+    "aiofiles==24.1.0",
+    "aiohttp==3.12.14",
+    "markitdown==0.0.2",
+    "tiktoken==0.9.0",
+    "jinja2==3.1.6",
+    
+    # MCP support
+    "fastmcp==2.1.2",
+    "mcp==1.10.0"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
