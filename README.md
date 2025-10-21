@@ -36,7 +36,7 @@ This version has been **completely reworked** to be much simpler and easier to p
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Streamlit     │    │ Agent Framework │    │ Azure Services  │
-│   Frontend      │───▶│    Backend      │───▶│ (OpenAI, Cosmos)│
+│   Frontend      │──▶│    Backend      │───▶│ (OpenAI, Cosmos)│
 │   (Python)      │    │   (Python)      │    │    (Pulumi)     │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
@@ -234,6 +234,7 @@ If your app is ready, you can browse to (typically) http://localhost:8501 to see
 ![Screenshot](./assets/application.png)
 
 # Learn
-Check these resources:
+Check these resources (TODO: update to Agent Framework, below are on Autogen):
+0. [livestream_slides](https://github.com/orgs/azure-ai-foundry/discussions/166) - Python + AI livestream series: Resources
 1. [Blogpost](https://techcommunity.microsoft.com/blog/Azure-AI-Services-blog/build-your-dream-team-with-autogen/4157961) - Build your dream team with Autogen
 2. [Webinar](https://youtu.be/wB9gD9FkgNA?si=WU3H0QL37RCiTGvl) - More agents is all you need
